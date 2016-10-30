@@ -2,7 +2,6 @@ defmodule ExpensesRecorder.User do
   use ExpensesRecorder.Web, :model
 
   schema "users" do
-    field :name, :string
     field :username, :string
     field :password_hash, :string
     field :password,      :string, virtual: true
@@ -15,7 +14,7 @@ defmodule ExpensesRecorder.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:username, :name])
+    |> cast(params, [:username])
     |> validate_length(:username, min: 4)
   end
 

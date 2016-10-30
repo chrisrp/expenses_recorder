@@ -2,7 +2,8 @@ defmodule ExpensesRecorder.Repo.Migrations.RemoveNameFromUser do
   use Ecto.Migration
 
   def change do
-    # TODO: Remove name column
-      
+    alter table(:users) do
+      remove :name
+    end     
   end
 end
